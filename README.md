@@ -46,7 +46,7 @@ To further optimize the model, consider adjusting the following hyperparameters:
 - **Network Depth**: Adjust the number of CNN layers to modify model complexity.
 
 ## Future Work
-Future plans include using high-performance resources such as AWS to accelerate training and exploring alternative baseline algorithms and model architectures to improve performance on the EEG-based gaze prediction task.
+Future plans include exploring alternative baseline algorithms and model architectures to improve performance on the EEG-based gaze prediction task.
 
 ## License
 This project is licensed under the MIT License. Contributions and suggestions are welcome.
