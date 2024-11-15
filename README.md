@@ -1,4 +1,4 @@
-# ViT vs. Baseline Algorithms for EEG-based Gaze Prediction
+# CNN vs. Baseline Algorithms for EEG-based Gaze Prediction
 
 ## Overview
 This project explores the performance of a convolutional neural network(CNN) model on the EEG-based gaze prediction task from the EEGEyeNet dataset. I compare this with two baseline algorithms: **Lasso Regression** and **Random Forest**. The specific task used from the EEGEyeNet dataset is `Position_task_with_dots_synchronised_min`. Due to limited experience with hyperparameter tuning, the performance of all three models has been suboptimal, and further adjustments are planned.
