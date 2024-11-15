@@ -1,9 +1,53 @@
 # ViT vs. Baseline Algorithms for EEG-based Gaze Prediction
 
-## 概述
-本项目探讨了在EEGEyeNet数据集的基于EEG的注视预测任务中，使用基础视觉Transformer (ViT)模型的表现。我们使用两个基准算法进行比较：**平均基准方法**和**线性回归**。使用的具体任务是EEGEyeNet数据集中的`Position_task_with_dots_synchronised_min`。由于对超参数的调整还不熟练，三个模型的表现都不理想，我还会继续进行修改和优化。
+## Overview
+This project explores the performance of a convolutional neural network(CNN) model on the EEG-based gaze prediction task from the EEGEyeNet dataset. I compare this with two baseline algorithms: **Lasso Regression** and **Random Forest**. The specific task used from the EEGEyeNet dataset is `Position_task_with_dots_synchronised_min`. Due to limited experience with hyperparameter tuning, the performance of all three models has been suboptimal, and further adjustments are planned.
 
-## 数据集下载
-要下载数据集，请使用以下命令：
+## Dataset Download
+To download the dataset, use the following command:
 ```bash
 wget -O "./dataset/Position_task_with_dots_synchronised_min.npz" "https://osf.io/download/ge87t/"
+```
+
+## Installation
+
+### General Requirements
+We recommend using Conda to install general requirements:
+```bash
+conda install --file general_requirements.txt
+```
+
+### PyTorch Requirements
+For PyTorch and related dependencies, use Conda with the following command:
+```bash
+conda install -c pytorch torch torchvision torchaudio
+```
+
+## Usage
+
+### Data Loading
+Upload the dataset file in your Google Drive, and load it with the following code:
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+import sys
+sys.path.append('/content/drive/MyDrive/Colab Notebooks/CNN_Test')
+
+from EEGEyeNet import EEGEyeNetDataset
+
+data_file_path = '/content/drive/MyDrive/Colab Notebooks/Position_task_with_dots_synchronised_min.npz'
+```
+
+## Hyperparameter Tuning
+To further optimize the model, consider adjusting the following hyperparameters:
+- **Learning Rate**: Try a lower or higher learning rate to improve model stability.
+- **Batch Size**: Depending on hardware, experiment with smaller or larger batch sizes to observe the impact on training.
+- **Network Depth**: Adjust the number of CNN layers to modify model complexity.
+
+## Future Work
+Future plans include using high-performance resources such as AWS to accelerate training and exploring alternative baseline algorithms and model architectures to improve performance on the EEG-based gaze prediction task.
+
+## License
+This project is licensed under the MIT License. Contributions and suggestions are welcome.
+
